@@ -1,0 +1,141 @@
+<div id="app" v-cloak>
+  <div class="d-flex align-items-center justify-content-between flex-wrap gap-3 mb-4">
+    <div>
+      <h1 class="h3 mb-1">訂單管理</h1>
+      <p class="small text-muted-2 mb-0">檢視與追蹤所有顧客訂單</p>
+    </div>
+    <div class="d-flex align-items-center gap-2">
+      <label class="small text-muted-2 mb-0 text-nowrap">狀態篩選</label>
+      <select v-model="statusFilter" class="form-select form-select-sm" style="width: auto;">
+        <option value="">全部</option>
+        <option value="pending">待付款</option>
+        <option value="paid">已付款</option>
+        <option value="failed">付款失敗</option>
+      </select>
+    </div>
+  </div>
+
+  <div v-if="loading" class="loader">
+    <div class="spinner-border text-brand" role="status"><span class="visually-hidden">載入中</span></div>
+  </div>
+
+  <template v-else>
+    <div class="surface shadow-soft overflow-hidden">
+      <div class="table-responsive">
+        <table class="table table-clean align-middle mb-0">
+          <thead>
+            <tr>
+              <th>訂單編號</th>
+              <th>買家</th>
+              <th class="text-end">金額</th>
+              <th class="text-center">狀態</th>
+              <th class="text-end">日期</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              v-for="order in orders"
+              :key="order.id"
+              class="row-link"
+              @click="viewDetail(order.id)">
+              <td class="text-dark fw-medium">{{ order.order_no }}</td>
+              <td class="text-muted-2">{{ order.recipient_name }}</td>
+              <td class="text-end text-dark">NT$ {{ order.total_amount.toLocaleString() }}</td>
+              <td class="text-center">
+                <span class="badge rounded-pill"
+                      :class="statusMap[order.status]?.cls || 'bg-secondary-subtle text-secondary-emphasis'">
+                  {{ statusMap[order.status]?.label || order.status }}
+                </span>
+              </td>
+              <td class="text-end text-muted-2">{{ new Date(order.created_at).toLocaleDateString('zh-TW') }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Pagination -->
+    <div v-if="pagination.totalPages > 1" class="pager mt-4">
+      <button
+        v-for="p in pagination.totalPages"
+        :key="p"
+        @click="loadOrders(p)"
+        class="page-num"
+        :class="{ active: p === pagination.page }">
+        {{ p }}
+      </button>
+    </div>
+  </template>
+
+  <!-- Order Detail Modal -->
+  <div v-if="detailVisible" class="overlay">
+    <div class="overlay__backdrop" @click="detailVisible = false"></div>
+    <div class="overlay__panel lg" style="max-height: 85vh; overflow-y: auto;">
+      <div v-if="detailLoading" class="loader py-4">
+        <div class="spinner-border text-brand" role="status"><span class="visually-hidden">載入中</span></div>
+      </div>
+      <template v-else-if="detailOrder">
+        <div class="d-flex align-items-start justify-content-between mb-4">
+          <h3 class="h5 mb-0">訂單詳情</h3>
+          <button @click="detailVisible = false" class="btn btn-link link-secondary p-0 fs-4 lh-1"><i class="bi bi-x-lg"></i></button>
+        </div>
+
+        <div class="row g-3 small mb-3">
+          <div class="col-6">
+            <p class="text-muted-2 mb-1">訂單編號</p>
+            <p class="text-dark fw-medium mb-0">{{ detailOrder.order_no }}</p>
+          </div>
+          <div class="col-6">
+            <p class="text-muted-2 mb-1">狀態</p>
+            <span class="badge rounded-pill"
+                  :class="statusMap[detailOrder.status]?.cls || 'bg-secondary-subtle text-secondary-emphasis'">
+              {{ statusMap[detailOrder.status]?.label || detailOrder.status }}
+            </span>
+          </div>
+          <div class="col-6">
+            <p class="text-muted-2 mb-1">買家</p>
+            <p class="text-dark mb-0">{{ detailOrder.user?.name }} ({{ detailOrder.user?.email }})</p>
+          </div>
+          <div class="col-6">
+            <p class="text-muted-2 mb-1">日期</p>
+            <p class="text-dark mb-0">{{ new Date(detailOrder.created_at).toLocaleDateString('zh-TW') }}</p>
+          </div>
+        </div>
+
+        <div class="border-top pt-3 mb-3 small" style="border-color: var(--line) !important;">
+          <p class="text-muted-2 mb-2">收件資訊</p>
+          <p class="text-dark mb-1">{{ detailOrder.recipient_name }}</p>
+          <p class="text-muted-2 mb-1">{{ detailOrder.recipient_email }}</p>
+          <p class="text-muted-2 mb-0">{{ detailOrder.recipient_address }}</p>
+        </div>
+
+        <div class="border-top pt-3" style="border-color: var(--line) !important;">
+          <p class="text-muted-2 small mb-2">商品明細</p>
+          <div class="table-responsive">
+            <table class="table table-clean align-middle small mb-0">
+              <thead>
+                <tr>
+                  <th>商品名稱</th>
+                  <th class="text-end">單價</th>
+                  <th class="text-end">數量</th>
+                  <th class="text-end">小計</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="item in detailOrder.items" :key="item.id">
+                  <td class="text-dark">{{ item.product_name }}</td>
+                  <td class="text-end text-muted-2">NT$ {{ item.product_price.toLocaleString() }}</td>
+                  <td class="text-end text-muted-2">{{ item.quantity }}</td>
+                  <td class="text-end fw-medium text-dark">NT$ {{ (item.product_price * item.quantity).toLocaleString() }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="d-flex justify-content-end mt-3 pt-3 border-top" style="border-color: var(--line) !important;">
+            <span class="price" style="font-size: 1.15rem;">總計 <span class="cur">NT$</span>{{ detailOrder.total_amount.toLocaleString() }}</span>
+          </div>
+        </div>
+      </template>
+    </div>
+  </div>
+</div>

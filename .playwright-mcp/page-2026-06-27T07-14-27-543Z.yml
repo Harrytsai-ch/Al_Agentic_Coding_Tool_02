@@ -1,0 +1,83 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link " 花漾生活" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e5]: 
+        - text: 花漾生活
+      - text: 
+      - generic [ref=e6]:
+        - list [ref=e7]:
+          - listitem [ref=e8]:
+            - link "商品列表" [ref=e9] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=e10]:
+            - link "購物車 1" [ref=e11] [cursor=pointer]:
+              - /url: /cart
+              - text: 購物車
+              - generic [ref=e12]: "1"
+          - listitem
+        - link "登入" [ref=e14] [cursor=pointer]:
+          - /url: /login
+  - main [ref=e15]:
+    - generic [ref=e19]:
+      - generic [ref=e20]:
+        - generic [ref=e22]: 
+        - heading "花漾生活" [level=1] [ref=e23]
+        - paragraph [ref=e24]: 登入以管理您的訂單與購物車
+      - generic [ref=e25]:
+        - button "登入" [ref=e26] [cursor=pointer]
+        - button "註冊" [ref=e27] [cursor=pointer]
+      - generic [ref=e28]:
+        - generic [ref=e29]:
+          - generic [ref=e30]: Email
+          - textbox "請輸入 Email" [ref=e31]
+        - generic [ref=e32]:
+          - generic [ref=e33]: 密碼
+          - textbox "請輸入密碼" [ref=e34]
+        - button "登入" [ref=e35] [cursor=pointer]
+  - contentinfo [ref=e36]:
+    - generic [ref=e37]:
+      - generic [ref=e38]:
+        - generic [ref=e39]:
+          - generic [ref=e40]:
+            - generic [ref=e41]: 
+            - text: 花漾生活
+          - paragraph [ref=e43]: 精選當季鮮花，由專業花藝師手工包裝。每一束花都傳遞著溫暖與祝福，為您的生活增添色彩與芬芳。
+        - generic [ref=e44]:
+          - heading "快速連結" [level=6] [ref=e45]
+          - list [ref=e46]:
+            - listitem [ref=e47]:
+              - link "商品列表" [ref=e48] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e49]:
+              - link "購物車" [ref=e50] [cursor=pointer]:
+                - /url: /cart
+            - listitem [ref=e51]:
+              - link "我的訂單" [ref=e52] [cursor=pointer]:
+                - /url: /orders
+        - generic [ref=e53]:
+          - heading "客戶服務" [level=6] [ref=e54]
+          - list [ref=e55]:
+            - listitem [ref=e56]:
+              - generic [ref=e57]: 
+              - text: 台北市區當日配送
+            - listitem [ref=e58]:
+              - generic [ref=e59]: 
+              - text: 消費滿 NT$ 500 免運
+            - listitem [ref=e60]:
+              - generic [ref=e61]: 
+              - text: 客服時間 09:00–18:00
+      - separator [ref=e62]
+      - generic [ref=e63]:
+        - generic [ref=e64]: © 2026 花漾生活 Flower Life. All rights reserved.
+        - generic [ref=e65]:
+          - link "" [ref=e66] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e67]: 
+          - link "" [ref=e68] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e69]: 
+          - link "" [ref=e70] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e71]: 

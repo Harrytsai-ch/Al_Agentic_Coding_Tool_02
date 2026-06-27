@@ -1,0 +1,126 @@
+<div id="app" v-cloak>
+  <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-4">
+    <div>
+      <h1 class="h3 mb-1">商品管理</h1>
+      <p class="small text-muted-2 mb-0">新增、編輯與管理所有花藝商品</p>
+    </div>
+    <button @click="openCreate" class="btn btn-cta">
+      <i class="bi bi-plus-lg me-1"></i>新增商品
+    </button>
+  </div>
+
+  <div v-if="loading" class="loader">
+    <div class="spinner-border text-brand" role="status"><span class="visually-hidden">載入中</span></div>
+  </div>
+
+  <template v-else>
+    <div class="surface shadow-soft overflow-hidden">
+      <div class="table-responsive">
+        <table class="table table-clean align-middle mb-0">
+          <thead>
+            <tr>
+              <th>圖片</th>
+              <th>商品名稱</th>
+              <th class="text-end">價格</th>
+              <th class="text-end">庫存</th>
+              <th class="text-end">操作</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="product in products" :key="product.id">
+              <td style="width: 72px;">
+                <img
+                  :src="product.image_url || 'https://images.unsplash.com/photo-1490750967868-88aa4f44baee?w=120'"
+                  :alt="product.name"
+                  class="rounded-3 object-cover" style="width: 48px; height: 48px;">
+              </td>
+              <td class="text-dark fw-medium">{{ product.name }}</td>
+              <td class="text-end text-muted-2">NT$ {{ product.price.toLocaleString() }}</td>
+              <td class="text-end">
+                <span class="badge rounded-pill"
+                      :class="product.stock > 0 ? 'bg-success-subtle text-success-emphasis' : 'bg-danger-subtle text-danger-emphasis'">
+                  {{ product.stock }}
+                </span>
+              </td>
+              <td class="text-end text-nowrap">
+                <button @click="openEdit(product)" class="btn btn-sm btn-outline-brand me-1">
+                  <i class="bi bi-pencil"></i><span class="d-none d-md-inline ms-1">編輯</span>
+                </button>
+                <button @click="confirmDeleteFn(product.id)" class="btn btn-sm btn-outline-danger">
+                  <i class="bi bi-trash3"></i><span class="d-none d-md-inline ms-1">刪除</span>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Pagination -->
+    <div v-if="pagination.totalPages > 1" class="pager mt-4">
+      <button
+        v-for="p in pagination.totalPages"
+        :key="p"
+        @click="loadProducts(p)"
+        class="page-num"
+        :class="{ active: p === pagination.page }">
+        {{ p }}
+      </button>
+    </div>
+  </template>
+
+  <!-- Product Modal -->
+  <div v-if="modalVisible" class="overlay">
+    <div class="overlay__backdrop" @click="modalVisible = false"></div>
+    <div class="overlay__panel">
+      <div class="d-flex align-items-center justify-content-between mb-4">
+        <h3 class="h5 mb-0">{{ editingProduct ? '編輯商品' : '新增商品' }}</h3>
+        <button @click="modalVisible = false" class="btn btn-link link-secondary p-0 fs-4 lh-1"><i class="bi bi-x-lg"></i></button>
+      </div>
+      <form @submit.prevent="handleSave">
+        <div class="mb-3">
+          <label class="form-label">商品名稱 <span class="text-danger">*</span></label>
+          <input v-model="form.name" type="text" class="form-control">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">商品描述</label>
+          <textarea v-model="form.description" rows="3" class="form-control"></textarea>
+        </div>
+        <div class="row g-3 mb-3">
+          <div class="col-6">
+            <label class="form-label">價格 <span class="text-danger">*</span></label>
+            <input v-model.number="form.price" type="number" min="1" class="form-control">
+          </div>
+          <div class="col-6">
+            <label class="form-label">庫存 <span class="text-danger">*</span></label>
+            <input v-model.number="form.stock" type="number" min="0" class="form-control">
+          </div>
+        </div>
+        <div class="mb-4">
+          <label class="form-label">圖片 URL</label>
+          <input v-model="form.image_url" type="text" class="form-control" placeholder="https://...">
+        </div>
+        <div class="d-flex justify-content-end gap-2">
+          <button type="button" @click="modalVisible = false" class="btn btn-soft px-4">取消</button>
+          <button type="submit" :disabled="saving" class="btn btn-cta px-4">
+            {{ saving ? '儲存中...' : '儲存' }}
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Confirm Delete Dialog -->
+  <div v-if="confirmVisible" class="overlay">
+    <div class="overlay__backdrop" @click="confirmVisible = false"></div>
+    <div class="overlay__panel sm text-center">
+      <div class="display-6 mb-2" style="color: var(--danger);"><i class="bi bi-exclamation-triangle"></i></div>
+      <h3 class="h5 mb-2">確認刪除</h3>
+      <p class="text-muted-2 small mb-4">確定要刪除這個商品嗎？此操作無法復原。</p>
+      <div class="d-flex gap-2 justify-content-center">
+        <button @click="confirmVisible = false" class="btn btn-soft px-4">取消</button>
+        <button @click="handleDelete" class="btn btn-danger px-4">確認刪除</button>
+      </div>
+    </div>
+  </div>
+</div>

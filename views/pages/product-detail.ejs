@@ -1,0 +1,88 @@
+<div id="app" data-product-id="<%= productId %>" v-cloak>
+  <div v-if="loading" class="loader">
+    <div class="spinner-border text-brand" role="status"><span class="visually-hidden">載入中</span></div>
+  </div>
+
+  <div v-else-if="notFound" class="text-center py-5">
+    <div class="display-4 mb-3">&#127804;</div>
+    <h2 class="h4 mb-2">找不到此商品</h2>
+    <a href="/" class="btn btn-outline-brand btn-sm mt-2"><i class="bi bi-arrow-left me-1"></i>回到首頁</a>
+  </div>
+
+  <div v-else-if="product">
+    <!-- Breadcrumb -->
+    <nav class="mb-4 small">
+      <a href="/" class="text-muted-2"><i class="bi bi-house-door me-1"></i>首頁</a>
+      <span class="text-muted-2 mx-2">/</span>
+      <span class="text-brand fw-medium">{{ product.name }}</span>
+    </nav>
+
+    <div class="row g-4 g-lg-5">
+      <!-- Image -->
+      <div class="col-lg-6">
+        <div class="surface shadow-soft overflow-hidden">
+          <img
+            :src="product.image_url || 'https://images.unsplash.com/photo-1490750967868-88aa4f44baee?w=800'"
+            :alt="product.name"
+            class="w-100 aspect-square">
+        </div>
+      </div>
+
+      <!-- Info -->
+      <div class="col-lg-6">
+        <h1 class="h2 mb-2">{{ product.name }}</h1>
+        <div class="d-flex align-items-center gap-2 mb-3">
+          <span class="rating"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></span>
+          <span class="small text-muted-2">4.9 · 熱銷商品</span>
+        </div>
+
+        <p class="price price-lg mb-3"><span class="cur fs-6">NT$</span>{{ product.price.toLocaleString() }}</p>
+
+        <div class="mb-4">
+          <span class="badge rounded-pill bg-success-subtle text-success-emphasis py-2 px-3">
+            <i class="bi bi-check-circle-fill me-1"></i>尚有 {{ product.stock }} 件現貨
+          </span>
+        </div>
+
+        <p class="mb-4" style="line-height: 1.9;">{{ product.description }}</p>
+
+        <!-- Quantity -->
+        <div class="d-flex align-items-center gap-3 mb-4">
+          <span class="small text-muted-2">數量</span>
+          <div class="qty">
+            <button @click="decrease" aria-label="減少">&minus;</button>
+            <span class="val">{{ quantity }}</span>
+            <button @click="increase" aria-label="增加">+</button>
+          </div>
+        </div>
+
+        <div class="d-grid d-sm-flex gap-3 mb-4">
+          <button
+            @click="addToCart"
+            :disabled="adding || product.stock <= 0"
+            class="btn btn-cta btn-lg flex-fill">
+            <i class="bi bi-cart-plus me-2"></i>{{ product.stock <= 0 ? '已售完' : '加入購物車' }}
+          </button>
+          <a href="/cart" class="btn btn-outline-brand btn-lg"><i class="bi bi-bag me-2"></i>查看購物車</a>
+        </div>
+
+        <!-- Trust strip -->
+        <div class="d-flex flex-wrap gap-4 mb-4 small text-muted-2">
+          <span><i class="bi bi-truck text-brand me-1"></i>當日配送</span>
+          <span><i class="bi bi-shield-check text-brand me-1"></i>品質保證</span>
+          <span><i class="bi bi-gift text-brand me-1"></i>精美包裝</span>
+        </div>
+
+        <!-- Purchase Notes -->
+        <div class="surface bg-brand-soft p-4">
+          <h3 class="h6 mb-2"><i class="bi bi-info-circle me-1 text-brand"></i>購買須知</h3>
+          <ul class="small text-muted-2 mb-0 ps-3" style="line-height: 1.9;">
+            <li>花材依據季節供應，實際花束可能略有差異</li>
+            <li>台北市區可享當日配送服務</li>
+            <li>消費滿 NT$ 500 享免運優惠</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

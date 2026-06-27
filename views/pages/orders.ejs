@@ -1,0 +1,39 @@
+<div id="app" v-cloak>
+  <h1 class="h3 mb-4">我的訂單</h1>
+
+  <div v-if="loading" class="loader">
+    <div class="spinner-border text-brand" role="status"><span class="visually-hidden">載入中</span></div>
+  </div>
+
+  <div v-else-if="orders.length === 0" class="text-center py-5">
+    <div class="display-5 mb-3">&#128230;</div>
+    <p class="fw-medium text-dark mb-1">尚無訂單</p>
+    <p class="text-muted-2 small mb-4">快去選購喜歡的花束吧！</p>
+    <a href="/" class="btn btn-cta px-4"><i class="bi bi-flower1 me-1"></i>去逛逛</a>
+  </div>
+
+  <div v-else class="d-flex flex-column gap-3">
+    <a
+      v-for="order in orders"
+      :key="order.id"
+      :href="'/orders/' + order.id"
+      class="surface shadow-soft shadow-hover p-4 text-decoration-none d-block">
+      <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+        <div>
+          <p class="small text-muted-2 mb-1"><i class="bi bi-receipt me-1"></i>訂單編號</p>
+          <p class="fw-medium text-dark mb-1">{{ order.order_no }}</p>
+          <p class="small text-muted-2 mb-0">{{ new Date(order.created_at).toLocaleDateString('zh-TW') }}</p>
+        </div>
+        <div class="d-flex align-items-center gap-3">
+          <span class="price" style="font-size: 1.1rem;"><span class="cur">NT$</span>{{ order.total_amount.toLocaleString() }}</span>
+          <span
+            class="badge rounded-pill"
+            :class="statusMap[order.status]?.cls || 'bg-secondary-subtle text-secondary-emphasis'">
+            {{ statusMap[order.status]?.label || order.status }}
+          </span>
+          <i class="bi bi-chevron-right text-muted-2"></i>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>

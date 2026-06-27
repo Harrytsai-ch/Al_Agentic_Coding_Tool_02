@@ -1,0 +1,80 @@
+<div id="app" v-cloak>
+  <h1 class="h3 mb-4">結帳</h1>
+
+  <div v-if="loading" class="loader">
+    <div class="spinner-border text-brand" role="status"><span class="visually-hidden">載入中</span></div>
+  </div>
+
+  <div v-else class="row g-4">
+    <!-- Form -->
+    <div class="col-lg-7">
+      <div class="surface shadow-soft p-4 p-md-4">
+        <h2 class="h6 mb-4"><i class="bi bi-geo-alt text-brand me-1"></i>收件資訊</h2>
+        <div class="mb-3">
+          <label class="form-label">收件人姓名</label>
+          <input
+            v-model="form.recipientName"
+            type="text"
+            placeholder="請輸入收件人姓名"
+            class="form-control"
+            :class="{ 'is-invalid': errors.recipientName }">
+          <p v-if="errors.recipientName" class="field-error">{{ errors.recipientName }}</p>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Email</label>
+          <input
+            v-model="form.recipientEmail"
+            type="email"
+            placeholder="請輸入 Email"
+            class="form-control"
+            :class="{ 'is-invalid': errors.recipientEmail }">
+          <p v-if="errors.recipientEmail" class="field-error">{{ errors.recipientEmail }}</p>
+        </div>
+        <div class="mb-0">
+          <label class="form-label">收件地址</label>
+          <input
+            v-model="form.recipientAddress"
+            type="text"
+            placeholder="請輸入收件地址"
+            class="form-control"
+            :class="{ 'is-invalid': errors.recipientAddress }">
+          <p v-if="errors.recipientAddress" class="field-error">{{ errors.recipientAddress }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Summary -->
+    <div class="col-lg-5">
+      <div class="surface shadow-soft p-4 summary-card">
+        <h2 class="h6 mb-3">訂單摘要</h2>
+        <div class="d-flex flex-column gap-2 mb-3">
+          <div v-for="item in cartItems" :key="item.id" class="d-flex justify-content-between small">
+            <span class="text-muted-2 pe-2">{{ item.product.name }} <span class="text-dark">× {{ item.quantity }}</span></span>
+            <span class="text-dark text-nowrap">NT$ {{ (item.product.price * item.quantity).toLocaleString() }}</span>
+          </div>
+        </div>
+        <hr style="border-color: var(--line);">
+        <div class="d-flex justify-content-between small mb-2">
+          <span class="text-muted-2">商品小計</span>
+          <span class="text-dark">NT$ {{ cartTotal.toLocaleString() }}</span>
+        </div>
+        <div class="d-flex justify-content-between small mb-3">
+          <span class="text-muted-2">運費</span>
+          <span class="text-dark">{{ cartTotal >= 500 ? '免運' : 'NT$ 150' }}</span>
+        </div>
+        <hr style="border-color: var(--line);">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <span class="fw-semibold text-dark">總計</span>
+          <span class="summary-total">NT$ {{ (cartTotal + (cartTotal >= 500 ? 0 : 150)).toLocaleString() }}</span>
+        </div>
+        <button
+          @click="submitOrder"
+          :disabled="submitting"
+          class="btn btn-cta btn-lg w-100">
+          <i class="bi bi-check2-circle me-2"></i>{{ submitting ? '處理中...' : '確認送出訂單' }}
+        </button>
+        <p class="text-center text-muted-2 small mt-3 mb-0"><i class="bi bi-shield-lock me-1"></i>交易採安全加密保護</p>
+      </div>
+    </div>
+  </div>
+</div>

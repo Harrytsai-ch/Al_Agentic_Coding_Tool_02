@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" fill="none">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#C9A24B" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#E7D3A1" stop-opacity="0.25"/>
+    </linearGradient>
+    <g id="sprig" stroke="url(#g)" stroke-width="1.4" stroke-linecap="round">
+      <path d="M0 0 C 40 -40 80 -50 130 -46"/>
+      <path d="M30 -10 C 34 -34 50 -46 70 -50"/>
+      <path d="M58 -20 C 64 -44 82 -54 102 -56"/>
+      <path d="M86 -32 C 94 -52 112 -58 130 -58"/>
+      <ellipse cx="22" cy="-6" rx="9" ry="4" transform="rotate(-32 22 -6)"/>
+      <ellipse cx="52" cy="-18" rx="9" ry="4" transform="rotate(-32 52 -18)"/>
+      <ellipse cx="82" cy="-30" rx="9" ry="4" transform="rotate(-30 82 -30)"/>
+    </g>
+  </defs>
+
+  <!-- scattered sprigs -->
+  <use href="#sprig" transform="translate(70 540) rotate(-12) scale(1.5)"/>
+  <use href="#sprig" transform="translate(240 590) rotate(8) scale(1.1)"/>
+  <use href="#sprig" transform="translate(1060 120) rotate(150) scale(1.7)"/>
+  <use href="#sprig" transform="translate(1140 300) rotate(170) scale(1.2)"/>
+  <use href="#sprig" transform="translate(960 540) rotate(20) scale(1.3)"/>
+
+  <!-- delicate blossoms -->
+  <g stroke="#C9A24B" stroke-width="1.3" opacity="0.7">
+    <g transform="translate(1015 415)">
+      <circle cx="0" cy="0" r="5" fill="#C9A24B" fill-opacity="0.5"/>
+      <ellipse cx="0" cy="-16" rx="6" ry="13"/>
+      <ellipse cx="15" cy="-5" rx="6" ry="13" transform="rotate(72 15 -5)"/>
+      <ellipse cx="9" cy="14" rx="6" ry="13" transform="rotate(144 9 14)"/>
+      <ellipse cx="-9" cy="14" rx="6" ry="13" transform="rotate(216 -9 14)"/>
+      <ellipse cx="-15" cy="-5" rx="6" ry="13" transform="rotate(288 -15 -5)"/>
+    </g>
+    <g transform="translate(150 150) scale(0.8)">
+      <circle cx="0" cy="0" r="5" fill="#C9A24B" fill-opacity="0.4"/>
+      <ellipse cx="0" cy="-16" rx="6" ry="13"/>
+      <ellipse cx="15" cy="-5" rx="6" ry="13" transform="rotate(72 15 -5)"/>
+      <ellipse cx="9" cy="14" rx="6" ry="13" transform="rotate(144 9 14)"/>
+      <ellipse cx="-9" cy="14" rx="6" ry="13" transform="rotate(216 -9 14)"/>
+      <ellipse cx="-15" cy="-5" rx="6" ry="13" transform="rotate(288 -15 -5)"/>
+    </g>
+  </g>
+
+  <!-- faint dots -->
+  <g fill="#E7D3A1" opacity="0.35">
+    <circle cx="420" cy="90" r="2.5"/>
+    <circle cx="520" cy="160" r="2"/>
+    <circle cx="760" cy="70" r="2.5"/>
+    <circle cx="880" cy="200" r="2"/>
+    <circle cx="300" cy="430" r="2.5"/>
+    <circle cx="640" cy="520" r="2"/>
+  </g>
+</svg>

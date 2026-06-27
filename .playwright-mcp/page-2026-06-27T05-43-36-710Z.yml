@@ -1,0 +1,82 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e5]:
+      - heading "訂單資訊" [level=3] [ref=e6]
+      - generic [ref=e7]:
+        - generic [ref=e8]:
+          - generic [ref=e9]:
+            - term [ref=e10]: 訂單編號
+            - definition [ref=e11]: F1782538967JMPY1
+          - generic [ref=e12]:
+            - term [ref=e13]: 商店名稱
+            - definition [ref=e14]: 測試帳號三
+        - table [ref=e16]:
+          - rowgroup [ref=e17]:
+            - row "商品明細 小計" [ref=e18]:
+              - columnheader "商品明細" [ref=e19]
+              - columnheader "小計" [ref=e20]
+          - rowgroup [ref=e21]:
+            - row "粉色玫瑰花束 1,680" [ref=e22]:
+              - cell "粉色玫瑰花束" [ref=e23]
+              - cell "1,680" [ref=e24]
+      - generic [ref=e25]:
+        - definition [ref=e26]: 實際付款金額
+        - definition [ref=e27]: NT$1,680
+    - generic [ref=e30]:
+      - heading "付款方式" [level=3] [ref=e31]
+      - generic [ref=e32]:
+        - list [ref=e34]:
+          - listitem "Credit" [ref=e35] [cursor=pointer]: 信用卡
+          - listitem "ApplePay" [ref=e37] [cursor=pointer]: Apple Pay
+          - listitem "TWQR" [ref=e39] [cursor=pointer]: 行動支付
+          - listitem "WeiXin" [ref=e41] [cursor=pointer]: 微信支付
+          - listitem "iPassPay" [ref=e43] [cursor=pointer]: iPASS MONEY
+          - listitem "JKOPay" [ref=e45] [cursor=pointer]: 街口支付
+          - listitem "WebATM" [ref=e47] [cursor=pointer]: 網路ATM
+          - listitem "ATM" [ref=e49] [cursor=pointer]: ATM虛擬帳號
+          - listitem "BarCode" [ref=e51] [cursor=pointer]: 超商條碼
+          - listitem "CVS" [ref=e53] [cursor=pointer]: 超商代碼
+          - listitem "GWPay" [ref=e55] [cursor=pointer]: 綠界Pay
+          - listitem "BNPL" [ref=e57] [cursor=pointer]: 無卡分期
+        - generic [ref=e173]:
+          - generic [ref=e174]:
+            - generic [ref=e175]:
+              - paragraph [ref=e176]: 選擇銀行並取得虛擬帳號後，再透過網路銀行、銀行APP或至實體ATM轉帳完成付款
+              - generic [ref=e177]:
+                - term [ref=e178]: 選擇銀行
+                - definition [ref=e179]:
+                  - combobox [ref=e181] [cursor=pointer]:
+                    - option "請選擇銀行"
+                    - option "台灣土地銀行" [selected]
+                    - option "板信銀行"
+                    - option "凱基銀行"
+                    - option "台灣銀行"
+                    - option "國泰世華銀行"
+                    - option "中國信託"
+                    - option "第一銀行"
+                    - option "其他金融機構"
+            - generic [ref=e182]:
+              - heading "注意事項" [level=4] [ref=e183]
+              - list [ref=e184]:
+                - listitem [ref=e185]: 金融卡發卡銀行與ATM所屬銀行不同時，銀行可能收取跨行轉帳手續費，實際收取金額依各銀行公告為主。
+                - listitem [ref=e186]: 此付款方式不支援ATM櫃員機無卡存款功能及銀行臨櫃繳費(含無摺存款)。
+            - link "取得繳費帳號" [ref=e188] [cursor=pointer]:
+              - /url: "#"
+            - paragraph [ref=e190]: 綠界科技不承作投資、賭博、虛擬貨幣等交易代理收付，勿聽從他人指示付款，有疑慮請撥打 165 或 110
+          - generic [ref=e191]:
+            - generic [ref=e192]: 綠界Pay掃描付款
+            - img [ref=e194]
+            - generic [ref=e196]:
+              - text: 掃碼快速付款或下載綠界Pay
+              - text: (交易完成前請勿關閉瀏覽器)
+            - list [ref=e198]:
+              - listitem [ref=e199]:
+                - link "測試付款請點此" [ref=e200] [cursor=pointer]:
+                  - /url: https://payment-stage.ecpay.com.tw/MockScanCodePay/MockScanCodePayPaid?data=y5G6HmnAfhvO9yDHU/0JhA==
+  - contentinfo [ref=e164]:
+    - generic [ref=e165]:
+      - link "綠界科技 ECPay" [ref=e167] [cursor=pointer]:
+        - /url: https://www.ecpay.com.tw/
+        - img "綠界科技 ECPay" [ref=e168]
+      - paragraph [ref=e169]: 綠界科技提供SSL安全加密金流
+      - paragraph [ref=e171]: Copyright © 1996-2026 Green World FinTech Service Co., Ltd. All rights reserved.

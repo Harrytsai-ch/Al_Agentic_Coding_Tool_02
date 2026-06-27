@@ -1,0 +1,109 @@
+<div id="app" v-cloak>
+  <h1 class="h3 mb-4">購物車</h1>
+
+  <div v-if="loading" class="loader">
+    <div class="spinner-border text-brand" role="status"><span class="visually-hidden">載入中</span></div>
+  </div>
+
+  <div v-else-if="items.length === 0" class="text-center py-5">
+    <div class="display-5 mb-3">&#128722;</div>
+    <p class="fw-medium text-dark mb-1">購物車是空的</p>
+    <p class="text-muted-2 small mb-4">快去挑選喜歡的花束吧！</p>
+    <a href="/" class="btn btn-cta px-4"><i class="bi bi-flower1 me-1"></i>去逛逛</a>
+  </div>
+
+  <template v-else>
+    <!-- Free shipping banner -->
+    <div v-if="total < 500" class="notice notice-gold mb-4">
+      <i class="bi bi-truck"></i> 再買 NT$ {{ (500 - total).toLocaleString() }} 即可享免運費！
+    </div>
+    <div v-else class="notice notice-success mb-4">
+      <i class="bi bi-check-circle-fill"></i> 已達免運門檻，享免費配送！
+    </div>
+
+    <div class="row g-4">
+      <!-- Cart Items -->
+      <div class="col-lg-8">
+        <div class="surface shadow-soft overflow-hidden">
+          <div
+            v-for="item in items"
+            :key="item.id"
+            class="d-flex align-items-center gap-3 p-3 p-md-4 border-bottom"
+            style="border-color: var(--line) !important;">
+            <img
+              :src="item.product.image_url || 'https://images.unsplash.com/photo-1490750967868-88aa4f44baee?w=160'"
+              :alt="item.product.name"
+              class="rounded-3 object-cover flex-shrink-0"
+              style="width: 72px; height: 72px;">
+            <div class="flex-grow-1 min-w-0">
+              <h3 class="h6 mb-1 truncate-1">{{ item.product.name }}</h3>
+              <p class="price mb-0" style="font-size: 1rem;"><span class="cur">NT$</span>{{ item.product.price.toLocaleString() }}</p>
+            </div>
+
+            <!-- Quantity Controls -->
+            <div class="qty sm flex-shrink-0">
+              <button
+                @click="updateQuantity(item.id, item.quantity - 1)"
+                :disabled="item.quantity <= 1"
+                aria-label="減少">&minus;</button>
+              <span class="val">{{ item.quantity }}</span>
+              <button
+                @click="updateQuantity(item.id, item.quantity + 1)"
+                :disabled="item.quantity >= item.product.stock"
+                aria-label="增加">+</button>
+            </div>
+
+            <p class="fw-semibold text-dark mb-0 text-end d-none d-sm-block flex-shrink-0" style="width: 7rem;">
+              NT$ {{ (item.product.price * item.quantity).toLocaleString() }}
+            </p>
+
+            <button
+              @click="confirmDelete(item.id)"
+              class="btn btn-link link-secondary p-1 flex-shrink-0"
+              aria-label="移除">
+              <i class="bi bi-trash3 fs-6"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Summary -->
+      <div class="col-lg-4">
+        <div class="surface shadow-soft p-4 summary-card">
+          <h2 class="h6 mb-3">訂單摘要</h2>
+          <div class="d-flex justify-content-between mb-2 small">
+            <span class="text-muted-2">商品小計</span>
+            <span class="text-dark">NT$ {{ total.toLocaleString() }}</span>
+          </div>
+          <div class="d-flex justify-content-between mb-3 small">
+            <span class="text-muted-2">運費</span>
+            <span class="text-dark">{{ total >= 500 ? '免運' : 'NT$ 150' }}</span>
+          </div>
+          <hr style="border-color: var(--line);">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <span class="fw-semibold text-dark">總計</span>
+            <span class="summary-total">NT$ {{ (total + (total >= 500 ? 0 : 150)).toLocaleString() }}</span>
+          </div>
+          <button @click="goCheckout" class="btn btn-cta btn-lg w-100">
+            <i class="bi bi-credit-card me-2"></i>前往結帳
+          </button>
+          <a href="/" class="btn btn-link link-secondary w-100 mt-2 small">繼續購物</a>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <!-- Confirm Dialog -->
+  <div v-if="confirmVisible" class="overlay">
+    <div class="overlay__backdrop" @click="confirmVisible = false"></div>
+    <div class="overlay__panel sm text-center">
+      <div class="display-6 mb-2" style="color: var(--danger);"><i class="bi bi-exclamation-circle"></i></div>
+      <h3 class="h5 mb-2">確認移除</h3>
+      <p class="text-muted-2 small mb-4">確定要從購物車中移除這個商品嗎？</p>
+      <div class="d-flex gap-2 justify-content-center">
+        <button @click="confirmVisible = false" class="btn btn-soft px-4">取消</button>
+        <button @click="handleDelete" class="btn btn-danger px-4">確認移除</button>
+      </div>
+    </div>
+  </div>
+</div>

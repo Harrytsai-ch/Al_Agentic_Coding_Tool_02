@@ -1,0 +1,67 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - link "綠界科技ECPay" [ref=e5] [cursor=pointer]:
+      - /url: "#"
+      - img "綠界科技ECPay" [ref=e6]
+    - generic [ref=e8]:
+      - paragraph [ref=e9]: 綠界科技提供SSL安全加密金流
+      - heading "付款資訊" [level=3] [ref=e10]
+      - generic [ref=e11]:
+        - generic [ref=e12]:
+          - term [ref=e13]: 訂單編號
+          - definition [ref=e14]: F1782538967JMPY1
+        - generic [ref=e15]:
+          - term [ref=e16]: 商店名稱
+          - definition [ref=e17]: 測試帳號三
+        - generic [ref=e18]:
+          - term [ref=e19]: 付款方式
+          - definition [ref=e20]: ATM虛擬帳號
+      - generic [ref=e21]:
+        - paragraph [ref=e22]: 單位 Unit：新台幣 NTD
+        - generic [ref=e23]:
+          - generic [ref=e24]:
+            - definition [ref=e25]: 商品明細
+            - definition [ref=e26]: 小計
+          - generic [ref=e27]:
+            - definition [ref=e28]: 粉色玫瑰花束
+            - definition [ref=e29]: "1680"
+        - generic [ref=e31]:
+          - definition [ref=e32]: 應付金額
+          - definition [ref=e33]: NT$ 1,680
+      - generic [ref=e34]:
+        - generic [ref=e35]:
+          - term [ref=e36]: ATM繳費帳號
+          - definition [ref=e37]:
+            - paragraph [ref=e38]: 銀行代碼 005
+            - paragraph
+            - paragraph [ref=e39]: 帳號 **** **** **** ****
+            - paragraph [ref=e40]: 測試環境請勿實際繳費
+            - paragraph
+            - paragraph
+        - generic [ref=e41]:
+          - term [ref=e42]: 繳費截止時間
+          - definition [ref=e43]: 2026/06/30 23:59:59
+      - generic [ref=e44]:
+        - generic [ref=e45]:
+          - heading "注意事項：" [level=4] [ref=e46]
+          - list [ref=e47]:
+            - listitem [ref=e48]: ATM繳費帳號可透過實體ATM櫃員機以及網路銀行轉帳(網路銀行須開通「非約定轉帳」)；不支援ATM櫃員機無卡存款功能及銀行臨櫃繳費(含無摺存款)。
+            - listitem [ref=e49]:
+              - text: ATM櫃員機「轉帳」功能，單筆不可超過3萬元；如超過3萬元，請點選「繳費」功能按鈕
+              - link "繳費流程說明" [ref=e50] [cursor=pointer]:
+                - /url: https://www.ecpay.com.tw/Service/pay_qa_atm_acntr
+              - text: 。(第一銀行限使用「繳費」功能，板信銀行限使用「轉帳」功能)。
+            - listitem [ref=e51]: 適用【繳費】按鈕之銀行ATM櫃員機：台新銀行、玉山銀行、中國信託、華南銀行、第一銀行、富邦銀行、台灣銀行、土地銀行、彰化銀行、永豐銀行、國泰世華銀行、大眾銀行。
+            - listitem [ref=e52]: ATM繳費帳號由銀行端檢核，綠界科技無法阻擋金額錯誤/逾期繳費/重複繳款，請務必確認後再進行繳款。
+        - generic [ref=e53]:
+          - link "返回商店" [ref=e54] [cursor=pointer]:
+            - /url: http://localhost:3001/orders
+          - generic [ref=e55] [cursor=pointer]: 列印本頁
+        - paragraph [ref=e57]: 綠界科技不承作投資、賭博、虛擬貨幣等交易代理收付，勿聽從他人指示付款，有疑慮請撥打 165 或 110
+  - contentinfo [ref=e58]:
+    - generic [ref=e59]:
+      - link "綠界科技 ECPay" [ref=e61] [cursor=pointer]:
+        - /url: https://www.ecpay.com.tw/
+        - img "綠界科技 ECPay" [ref=e62]
+      - paragraph [ref=e63]: 綠界科技提供SSL安全加密金流
+      - paragraph [ref=e65]: Copyright © 1996-2026 Green World FinTech Service Co., Ltd. All rights reserved.

@@ -1,0 +1,405 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e5]:
+      - heading "訂單資訊" [level=3] [ref=e6]
+      - generic [ref=e7]:
+        - generic [ref=e8]:
+          - generic [ref=e9]:
+            - term [ref=e10]: 訂單編號
+            - definition [ref=e11]: F1782540001Z2NA2
+          - generic [ref=e12]:
+            - term [ref=e13]: 商店名稱
+            - definition [ref=e14]: 測試帳號三
+        - table [ref=e16]:
+          - rowgroup [ref=e17]:
+            - row "商品明細 小計" [ref=e18]:
+              - columnheader "商品明細" [ref=e19]
+              - columnheader "小計" [ref=e20]
+          - rowgroup [ref=e21]:
+            - row "粉色玫瑰花束 1,680" [ref=e22]:
+              - cell "粉色玫瑰花束" [ref=e23]
+              - cell "1,680" [ref=e24]
+      - generic [ref=e25]:
+        - definition [ref=e26]: 實際付款金額
+        - definition [ref=e27]: NT$1,680
+    - generic [ref=e30]:
+      - heading "付款方式" [level=3] [ref=e31]
+      - generic [ref=e32]:
+        - list [ref=e34]:
+          - listitem "Credit" [ref=e35] [cursor=pointer]: 信用卡
+          - listitem "ApplePay" [ref=e37] [cursor=pointer]: Apple Pay
+          - listitem "TWQR" [ref=e39] [cursor=pointer]: 行動支付
+          - listitem "WeiXin" [ref=e41] [cursor=pointer]: 微信支付
+          - listitem "iPassPay" [ref=e43] [cursor=pointer]: iPASS MONEY
+          - listitem "JKOPay" [ref=e45] [cursor=pointer]: 街口支付
+          - listitem "WebATM" [ref=e47] [cursor=pointer]: 網路ATM
+          - listitem "ATM" [ref=e49] [cursor=pointer]: ATM虛擬帳號
+          - listitem "BarCode" [ref=e51] [cursor=pointer]: 超商條碼
+          - listitem "CVS" [ref=e53] [cursor=pointer]: 超商代碼
+          - listitem "GWPay" [ref=e55] [cursor=pointer]: 綠界Pay
+          - listitem "BNPL" [ref=e57] [cursor=pointer]: 無卡分期
+        - generic [ref=e61]:
+          - generic [ref=e62]:
+            - generic [ref=e63]:
+              - heading "※ 信用卡交易資訊" [level=4] [ref=e64]
+              - generic [ref=e70]:
+                - term [ref=e71]:
+                  - text: 刷卡方式
+                  - superscript [ref=e72]: "*"
+                - definition [ref=e73]:
+                  - generic [ref=e74]:
+                    - generic [ref=e76] [cursor=pointer]: 一次付清
+                    - generic [ref=e78] [cursor=pointer]: 消費者自費分期
+              - generic [ref=e79]:
+                - term [ref=e80]:
+                  - text: 信用卡類型
+                  - superscript [ref=e81]: "*"
+                - definition [ref=e82]:
+                  - combobox [ref=e84] [cursor=pointer]:
+                    - option "VISA / MasterCard / JCB" [selected]
+                    - option "銀聯卡"
+              - generic [ref=e85]:
+                - term [ref=e86]:
+                  - generic [ref=e87]:
+                    - text: 信用卡卡號
+                    - superscript [ref=e88]: "*"
+                - definition [ref=e89]:
+                  - list [ref=e90]:
+                    - listitem [ref=e91]:
+                      - textbox "0000" [ref=e92]
+                      - text: "-"
+                      - textbox "0000" [ref=e93]
+                      - text: "-"
+                      - textbox "0000" [ref=e94]
+                      - text: "-"
+                      - textbox "0000" [ref=e95]
+                  - generic [ref=e96]: 本交易須通過Visa/MasterCard/JCB信用卡3D驗證
+              - generic [ref=e97]:
+                - term [ref=e98]:
+                  - text: 卡片有效期限
+                  - superscript [ref=e99]: "*"
+                - definition [ref=e100]:
+                  - generic [ref=e101]:
+                    - textbox "MM" [ref=e102]
+                    - textbox "YY" [ref=e103]
+                - definition [ref=e104]:
+                  - generic [ref=e105]:
+                    - term [ref=e106]:
+                      - text: 信用卡安全碼
+                      - superscript [ref=e107]: "*"
+                    - definition [ref=e108]:
+                      - textbox "CVV" [ref=e109]
+                      - img [ref=e110]
+              - generic [ref=e111]:
+                - heading "※ 持卡人資料" [level=4] [ref=e112]
+                - generic [ref=e113] [cursor=pointer]: 記住本次付款人資訊
+              - generic [ref=e114]:
+                - term [ref=e115]:
+                  - generic [ref=e116]:
+                    - text: 持卡人姓名
+                    - superscript [ref=e117]: "*"
+                - definition [ref=e118]:
+                  - textbox "持卡人姓名 *" [ref=e119]:
+                    - /placeholder: WANG XIAO MING
+                  - generic [ref=e120]: 請輸入卡片上的英文姓名
+              - generic [ref=e121]:
+                - term [ref=e122]:
+                  - generic [ref=e123]:
+                    - text: 手機號碼
+                    - superscript [ref=e124]: "*"
+                    - link [ref=e125] [cursor=pointer]:
+                      - /url: ""
+                - definition [ref=e126]:
+                  - textbox "0987654321" [ref=e127]
+                  - generic [ref=e128]: 請輸入於發卡銀行留存的手機
+              - generic [ref=e129]:
+                - term [ref=e130]:
+                  - generic [ref=e131]:
+                    - text: 電子信箱
+                    - link [ref=e132] [cursor=pointer]:
+                      - /url: ""
+                - definition [ref=e133]:
+                  - textbox "ecpay@ecpay.com.tw" [ref=e134]
+              - generic [ref=e135]:
+                - term [ref=e136]:
+                  - generic [ref=e137]:
+                    - text: 帳單地址
+                    - link [ref=e138] [cursor=pointer]:
+                      - /url: ""
+                - definition [ref=e139]:
+                  - combobox [ref=e143] [cursor=pointer]:
+                    - option "(TW) 台灣Taiwan" [selected]
+                    - option "(AF) 阿富汗Afghanistan"
+                    - option "(AX) 奧蘭Åland Islands"
+                    - option "(AL) 阿爾巴尼亞Albania"
+                    - option "(DZ) 阿爾及利亞Algeria"
+                    - option "(AS) 美屬薩摩亞American Samoa"
+                    - option "(AD) 安道爾Andorra"
+                    - option "(AO) 安哥拉Angola"
+                    - option "(AI) 安圭拉Anguilla"
+                    - option "(AQ) 南極洲Antarctica"
+                    - option "(AG) 安地卡及巴布達Antigua and Barbuda"
+                    - option "(AR) 阿根廷Argentina"
+                    - option "(AM) 亞美尼亞Armenia"
+                    - option "(AW) 阿魯巴Aruba"
+                    - option "(AU) 澳大利亞Australia"
+                    - option "(AT) 奧地利Austria"
+                    - option "(AZ) 亞塞拜然Azerbaijan"
+                    - option "(BS) 巴哈馬Bahamas"
+                    - option "(BH) 巴林Bahrain"
+                    - option "(BD) 孟加拉國Bangladesh"
+                    - option "(BB) 巴貝多Barbados"
+                    - option "(BY) 白俄羅斯Belarus"
+                    - option "(BE) 比利時Belgium"
+                    - option "(BZ) 貝里斯Belize"
+                    - option "(BJ) 貝南Benin"
+                    - option "(BM) 百慕達Bermuda"
+                    - option "(BT) 不丹Bhutan"
+                    - option "(BO) 玻利維亞Bolivia"
+                    - option "(BQ) 荷蘭加勒比區Bonaire, Sint Eustatius and Saba"
+                    - option "(BA) 波赫Bosnia and Herzegovina"
+                    - option "(BW) 波札那Botswana"
+                    - option "(BV) 布韋島Bouvet Island"
+                    - option "(BR) 巴西Brazil"
+                    - option "(IO) 英屬印度洋領地British Indian Ocean Territory"
+                    - option "(BN) 汶萊Brunei Darussalam"
+                    - option "(BG) 保加利亞Bulgaria"
+                    - option "(BF) 布吉納法索Burkina Faso"
+                    - option "(BI) 蒲隆地Burundi"
+                    - option "(CV) 維德角Cabo Verde"
+                    - option "(KH) 柬埔寨Cambodia"
+                    - option "(CM) 喀麥隆Cameroon"
+                    - option "(CA) 加拿大Canada"
+                    - option "(KY) 開曼群島Cayman Islands"
+                    - option "(CF) 中非Central African Republic"
+                    - option "(TD) 查德Chad"
+                    - option "(CL) 智利Chile"
+                    - option "(CN) 中國China"
+                    - option "(CX) 聖誕島Christmas Island"
+                    - option "(CC) 科科斯（基林）群島Cocos (Keeling) Islands"
+                    - option "(CO) 哥倫比亞Colombia"
+                    - option "(KM) 葛摩Comoros"
+                    - option "(CG) 剛果Congo"
+                    - option "(CD) 民主剛果Congo (Democratic Republic of the)"
+                    - option "(CK) 庫克群島Cook Islands"
+                    - option "(CR) 哥斯大黎加Costa Rica"
+                    - option "(CI) 象牙海岸Côte d'Ivoire"
+                    - option "(HR) 克羅埃西亞Croatia"
+                    - option "(CU) 古巴Cuba"
+                    - option "(CW) 庫拉索Curaçao"
+                    - option "(CY) 賽普勒斯Cyprus"
+                    - option "(CZ) 捷克Czechia"
+                    - option "(DK) 丹麥Denmark"
+                    - option "(DJ) 吉布地Djibouti"
+                    - option "(DM) 多米尼克Dominica"
+                    - option "(DO) 多明尼加Dominican Republic"
+                    - option "(EC) 厄瓜多Ecuador"
+                    - option "(EG) 埃及Egypt"
+                    - option "(SV) 薩爾瓦多El Salvador"
+                    - option "(GQ) 赤道幾內亞Equatorial Guinea"
+                    - option "(ER) 厄利垂亞Eritrea"
+                    - option "(EE) 愛沙尼亞Estonia"
+                    - option "(SZ) 史瓦帝尼Eswatini"
+                    - option "(ET) 衣索比亞Ethiopia"
+                    - option "(FK) 福克蘭群島Falkland Islands (Malvinas)"
+                    - option "(FO) 法羅群島Faroe Islands"
+                    - option "(FJ) 斐濟Fiji"
+                    - option "(FI) 芬蘭Finland"
+                    - option "(FR) 法國France"
+                    - option "(GF) 法屬圭亞那French Guiana"
+                    - option "(PF) 法屬玻里尼西亞French Polynesia"
+                    - option "(TF) 法屬南方和南極洲領地French Southern Territories"
+                    - option "(GA) 加彭Gabon"
+                    - option "(GM) 甘比亞Gambia"
+                    - option "(GE) 喬治亞Georgia"
+                    - option "(DE) 德國Germany"
+                    - option "(GH) 加納Ghana"
+                    - option "(GI) 直布羅陀Gibraltar"
+                    - option "(GR) 希臘Greece"
+                    - option "(GL) 格陵蘭Greenland"
+                    - option "(GD) 格瑞那達Grenada"
+                    - option "(GP) 瓜德羅普Guadeloupe"
+                    - option "(GU) 關島Guam"
+                    - option "(GT) 瓜地馬拉Guatemala"
+                    - option "(GG) 根西Guernsey"
+                    - option "(GN) 幾內亞Guinea"
+                    - option "(GW) 幾內亞比索Guinea-Bissau"
+                    - option "(GY) 蓋亞那Guyana"
+                    - option "(HT) 海地Haiti"
+                    - option "(HM) 赫德島和麥克唐納群島Heard Island and McDonald Islands"
+                    - option "(VA) 梵蒂岡Holy See"
+                    - option "(HN) 宏都拉斯Honduras"
+                    - option "(HK) 香港Hong Kong"
+                    - option "(HU) 匈牙利Hungary"
+                    - option "(IS) 冰島Iceland"
+                    - option "(IN) 印度India"
+                    - option "(ID) 印尼Indonesia"
+                    - option "(IR) 伊朗Iran (Islamic Republic of)"
+                    - option "(IQ) 伊拉克Iraq"
+                    - option "(IE) 愛爾蘭Ireland"
+                    - option "(IM) 曼島Isle of Man"
+                    - option "(IL) 以色列Israel"
+                    - option "(IT) 義大利Italy"
+                    - option "(JM) 牙買加Jamaica"
+                    - option "(JP) 日本Japan"
+                    - option "(JE) 澤西Jersey"
+                    - option "(JO) 約旦Jordan"
+                    - option "(KZ) 哈薩克Kazakhstan"
+                    - option "(KE) 肯亞Kenya"
+                    - option "(KI) 吉里巴斯Kiribati"
+                    - option "(KP) 北韓Korea (Democratic People's Republic of)"
+                    - option "(KR) 韓國Korea (Republic of)"
+                    - option "(KW) 科威特Kuwait"
+                    - option "(KG) 吉爾吉斯Kyrgyzstan"
+                    - option "(LA) 寮國Lao People's Democratic Republic"
+                    - option "(LV) 拉脫維亞Latvia"
+                    - option "(LB) 黎巴嫩Lebanon"
+                    - option "(LS) 賴索托Lesotho"
+                    - option "(LR) 賴比瑞亞Liberia"
+                    - option "(LY) 利比亞Libya"
+                    - option "(LI) 列支敦斯登Liechtenstein"
+                    - option "(LT) 立陶宛Lithuania"
+                    - option "(LU) 盧森堡Luxembourg"
+                    - option "(MO) 澳門Macao"
+                    - option "(MG) 馬達加斯加Madagascar"
+                    - option "(MW) 馬拉威Malawi"
+                    - option "(MY) 馬來西亞Malaysia"
+                    - option "(MV) 馬爾地夫Maldives"
+                    - option "(ML) 馬利Mali"
+                    - option "(MT) 馬爾他Malta"
+                    - option "(MH) 馬紹爾群島Marshall Islands"
+                    - option "(MQ) 馬提尼克Martinique"
+                    - option "(MR) 茅利塔尼亞Mauritania"
+                    - option "(MU) 模里西斯Mauritius"
+                    - option "(YT) 馬約特Mayotte"
+                    - option "(MX) 墨西哥Mexico"
+                    - option "(FM) 密克羅尼西亞聯邦Micronesia (Federated States of)"
+                    - option "(MD) 摩爾多瓦Moldova (Republic of)"
+                    - option "(MC) 摩納哥Monaco"
+                    - option "(MN) 蒙古國Mongolia"
+                    - option "(ME) 蒙特內哥羅Montenegro"
+                    - option "(MS) 蒙特塞拉特Montserrat"
+                    - option "(MA) 摩洛哥Morocco"
+                    - option "(MZ) 莫三比克Mozambique"
+                    - option "(MM) 緬甸Myanmar"
+                    - option "(NA) 納米比亞Namibia"
+                    - option "(NR) 諾魯Nauru"
+                    - option "(NP) 尼泊爾Nepal"
+                    - option "(NL) 荷蘭Netherlands"
+                    - option "(NC) 新喀里多尼亞New Caledonia"
+                    - option "(NZ) 紐西蘭New Zealand"
+                    - option "(NI) 尼加拉瓜Nicaragua"
+                    - option "(NE) 尼日Niger"
+                    - option "(NG) 奈及利亞Nigeria"
+                    - option "(NU) 紐埃Niue"
+                    - option "(NF) 諾福克島Norfolk Island"
+                    - option "(MK) 北馬其頓North Macedonia"
+                    - option "(MP) 北馬里亞納群島Northern Mariana Islands"
+                    - option "(NO) 挪威Norway"
+                    - option "(OM) 阿曼Oman"
+                    - option "(PK) 巴基斯坦Pakistan"
+                    - option "(PW) 帛琉Palau"
+                    - option "(PS) 巴勒斯坦Palestine, State of"
+                    - option "(PA) 巴拿馬Panama"
+                    - option "(PG) 巴布亞紐幾內亞Papua New Guinea"
+                    - option "(PY) 巴拉圭Paraguay"
+                    - option "(PE) 秘魯Peru"
+                    - option "(PH) 菲律賓Philippines"
+                    - option "(PN) 皮特肯群島Pitcairn"
+                    - option "(PL) 波蘭Poland"
+                    - option "(PT) 葡萄牙Portugal"
+                    - option "(PR) 波多黎各Puerto Rico"
+                    - option "(QA) 卡達Qatar"
+                    - option "(RE) 留尼旺Réunion"
+                    - option "(RO) 羅馬尼亞Romania"
+                    - option "(RU) 俄羅斯Russian Federation"
+                    - option "(RW) 盧安達Rwanda"
+                    - option "(BL) 聖巴泰勒米Saint Barthélemy"
+                    - option "(SH) 聖赫倫那、阿森松和特里斯坦-達庫尼亞Saint Helena, Ascension and Tristan da Cunha"
+                    - option "(KN) 聖克里斯多福及尼維斯Saint Kitts and Nevis"
+                    - option "(LC) 聖露西亞Saint Lucia"
+                    - option "(MF) 法屬聖馬丁Saint Martin (French part)"
+                    - option "(PM) 聖皮埃爾和密克隆Saint Pierre and Miquelon"
+                    - option "(VC) 聖文森及格瑞那丁Saint Vincent and the Grenadines"
+                    - option "(WS) 薩摩亞Samoa"
+                    - option "(SM) 聖馬利諾San Marino"
+                    - option "(ST) 聖多美普林西比Sao Tome and Principe"
+                    - option "(SA) 沙烏地阿拉伯Saudi Arabia"
+                    - option "(SN) 塞內加爾Senegal"
+                    - option "(RS) 塞爾維亞Serbia"
+                    - option "(SC) 塞席爾Seychelles"
+                    - option "(SL) 獅子山Sierra Leone"
+                    - option "(SG) 新加坡Singapore"
+                    - option "(SX) 荷屬聖馬丁Sint Maarten (Dutch part)"
+                    - option "(SK) 斯洛伐克Slovakia"
+                    - option "(SI) 斯洛維尼亞Slovenia"
+                    - option "(SB) 索羅門群島Solomon Islands"
+                    - option "(SO) 索馬利亞Somalia"
+                    - option "(ZA) 南非South Africa"
+                    - option "(GS) 南喬治亞和南桑威奇群島South Georgia and the South Sandwich Islands"
+                    - option "(SS) 南蘇丹South Sudan"
+                    - option "(ES) 西班牙Spain"
+                    - option "(LK) 斯里蘭卡Sri Lanka"
+                    - option "(SD) 蘇丹Sudan"
+                    - option "(SR) 蘇利南Suriname"
+                    - option "(SJ) 斯瓦爾巴和揚馬延Svalbard and Jan Mayen"
+                    - option "(SE) 瑞典Sweden"
+                    - option "(CH) 瑞士Switzerland"
+                    - option "(SY) 敘利亞Syrian Arab Republic"
+                    - option "(TJ) 塔吉克Tajikistan"
+                    - option "(TZ) 坦尚尼亞Tanzania, United Republic of"
+                    - option "(TH) 泰國Thailand"
+                    - option "(TL) 東帝汶Timor-Leste"
+                    - option "(TG) 多哥Togo"
+                    - option "(TK) 托克勞Tokelau"
+                    - option "(TO) 東加Tonga"
+                    - option "(TT) 千里達及托巴哥Trinidad and Tobago"
+                    - option "(TN) 突尼西亞Tunisia"
+                    - option "(TR) 土耳其Turkey"
+                    - option "(TM) 土庫曼Turkmenistan"
+                    - option "(TC) 特克斯與凱科斯群島Turks and Caicos Islands"
+                    - option "(TV) 吐瓦魯Tuvalu"
+                    - option "(UG) 烏干達Uganda"
+                    - option "(UA) 烏克蘭Ukraine"
+                    - option "(AE) 阿聯United Arab Emirates"
+                    - option "(GB) 英國United Kingdom"
+                    - option "(US) 美國United States"
+                    - option "(UM) 美國本土外小島嶼United States Minor Outlying Islands"
+                    - option "(UY) 烏拉圭Uruguay"
+                    - option "(UZ) 烏茲別克Uzbekistan"
+                    - option "(VU) 萬那杜Vanuatu"
+                    - option "(VE) 委內瑞拉Venezuela (Bolivarian Republic of)"
+                    - option "(VN) 越南Viet Nam"
+                    - option "(VG) 英屬維京群島Virgin Islands (British)"
+                    - option "(VI) 美屬維京群島Virgin Islands (U.S.)"
+                    - option "(WF) 瓦利斯和富圖納Wallis and Futuna"
+                    - option "(EH) 撒拉威阿拉伯民主共和國Western Sahara"
+                    - option "(YE) 葉門Yemen"
+                    - option "(ZM) 尚比亞Zambia"
+                    - option "(ZW) 辛巴威Zimbabwe"
+                  - textbox "南港區成功路一段58號5樓" [ref=e144]
+            - generic [ref=e145]:
+              - heading "注意事項" [level=4] [ref=e146]
+              - list [ref=e147]:
+                - listitem [ref=e148]:
+                  - generic [ref=e149]: 當您送出資料時，即表示您已閱讀、了解並同意綠界科技信用卡交易注意事項及個人資料運用聲明
+            - link "立即付款" [ref=e151] [cursor=pointer]:
+              - /url: javascript:void(0);
+            - paragraph [ref=e153]: 綠界科技不承作投資、賭博、虛擬貨幣等交易代理收付，勿聽從他人指示付款，有疑慮請撥打 165 或 110
+          - generic [ref=e154]:
+            - generic [ref=e155]: 綠界支付掃碼
+            - img [ref=e157]
+            - generic [ref=e159]:
+              - text: 掃碼快速付
+              - text: (交易完成前請勿關閉瀏覽器)
+            - list [ref=e161]:
+              - listitem [ref=e162]:
+                - link "測試付款請點此" [ref=e163] [cursor=pointer]:
+                  - /url: https://payment-stage.ecpay.com.tw/MockScanCodePay/MockScanCodePayPaid?data=Zd5xpnjUbxeiSHOlHshp1A==
+  - contentinfo [ref=e164]:
+    - generic [ref=e165]:
+      - link "綠界科技 ECPay" [ref=e167] [cursor=pointer]:
+        - /url: https://www.ecpay.com.tw/
+        - img "綠界科技 ECPay" [ref=e168]
+      - paragraph [ref=e169]: 綠界科技提供SSL安全加密金流
+      - paragraph [ref=e171]: Copyright © 1996-2026 Green World FinTech Service Co., Ltd. All rights reserved.

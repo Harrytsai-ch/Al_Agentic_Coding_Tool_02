@@ -1,0 +1,14 @@
+<aside class="admin-sidebar">
+  <nav class="py-2 py-md-3">
+    <a
+      href="/admin/products"
+      class="nav-link <%= typeof currentPath !== 'undefined' && currentPath === '/admin/products' ? 'active' : '' %>">
+      <i class="bi bi-box-seam"></i><span>商品管理</span>
+    </a>
+    <a
+      href="/admin/orders"
+      class="nav-link <%= typeof currentPath !== 'undefined' && currentPath === '/admin/orders' ? 'active' : '' %>">
+      <i class="bi bi-receipt"></i><span>訂單管理</span>
+    </a>
+  </nav>
+</aside>

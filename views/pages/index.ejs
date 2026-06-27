@@ -1,0 +1,201 @@
+<div id="app" v-cloak>
+  <!-- ============ Hero Banner ============ -->
+  <section class="hero p-4 p-md-5 mb-5">
+    <img class="hero__pattern" src="/images/hero-botanical.svg" alt="" aria-hidden="true">
+    <div class="hero__inner row align-items-center g-4 g-lg-5 py-3 py-lg-4">
+      <div class="col-lg-6 text-center text-lg-start">
+        <span class="eyebrow mb-3">FRESH · HANDCRAFTED · 2020</span>
+        <h1 class="mb-3">讓花，<br class="d-none d-sm-block">裝點生活的每一刻</h1>
+        <p class="lead mb-4 mx-auto mx-lg-0" style="max-width: 32rem;">
+          精選當季鮮花，由專業花藝師手工包裝。每一束花都傳遞著溫暖與祝福，為您的生活增添色彩與芬芳。
+        </p>
+        <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start mb-4">
+          <a href="#products" class="btn btn-cta btn-lg px-4">
+            <i class="bi bi-bag-heart me-2"></i>立即選購
+          </a>
+          <a href="#story" class="btn btn-outline-light btn-lg px-4 rounded-pill">品牌故事</a>
+        </div>
+        <div class="hero-stats d-flex gap-4 justify-content-center justify-content-lg-start small">
+          <div><span class="num d-block fs-4">12,000+</span>滿意顧客</div>
+          <div class="border-start border-light border-opacity-25 ps-4"><span class="num d-block fs-4">當日</span>台北配送</div>
+          <div class="border-start border-light border-opacity-25 ps-4"><span class="num d-block fs-4">4.9★</span>顧客評分</div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="position-relative">
+          <div class="hero-figure">
+            <img src="https://images.unsplash.com/photo-1487530811176-3780de880c2d?w=900&q=80" alt="精緻手工花束">
+          </div>
+          <div class="hero-badge" style="bottom: -14px; left: -6px;">
+            <span class="ic"><i class="bi bi-patch-check-fill"></i></span>
+            <span><span class="fw-bold d-block" style="line-height:1.1;">職人手作</span><span class="small text-muted-2">每束嚴選把關</span></span>
+          </div>
+          <div class="hero-badge d-none d-sm-flex" style="top: -14px; right: -6px;">
+            <span class="ic" style="background: var(--brand-050); color: var(--brand);"><i class="bi bi-truck"></i></span>
+            <span class="small fw-semibold">滿 NT$500 免運</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Featured Products ============ -->
+  <section class="mb-5 pb-2">
+    <div class="text-center mb-4">
+      <span class="eyebrow center justify-content-center">BEST SELLERS</span>
+      <h2 class="section-title mt-2 mb-1">精選推薦</h2>
+      <p class="section-sub mb-0">本季最受歡迎的花卉精選</p>
+    </div>
+    <div class="row g-3 g-md-4">
+      <div class="col-6 col-lg-3" v-for="(product, idx) in products.slice(0, 4)" :key="product.id">
+        <article class="product-card h-100" @click="goToProduct(product.id)">
+          <div class="product-media">
+            <span class="ribbon"><i class="bi bi-star-fill me-1"></i>熱銷</span>
+            <img :src="product.image_url || featuredImages[idx % 4]" :alt="product.name">
+          </div>
+          <div class="product-body text-center">
+            <h3 class="product-name justify-content-center">{{ product.name }}</h3>
+            <p class="price mt-2 mb-0"><span class="cur">NT$</span>{{ product.price.toLocaleString() }}</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Brand Story ============ -->
+  <section id="story" class="surface shadow-soft overflow-hidden mb-5">
+    <div class="row g-0 align-items-stretch">
+      <div class="col-md-6">
+        <img src="https://images.unsplash.com/photo-1508610048659-a06b669e3321?w=800&q=80" alt="花藝師工作中"
+             class="w-100 h-100 object-cover" style="min-height: 280px;">
+      </div>
+      <div class="col-md-6">
+        <div class="p-4 p-lg-5 h-100 d-flex flex-column justify-content-center">
+          <span class="eyebrow mb-3">OUR STORY</span>
+          <h2 class="section-title mb-3">專心，做好一束花的感動</h2>
+          <p class="mb-3">
+            花漾生活成立於 2020 年，我們相信每一朵花都有自己的故事。透過專業花藝師的巧手，將大自然的美好帶進您的日常生活中。
+          </p>
+          <blockquote class="border-start border-3 ps-3 mb-0 fst-italic text-muted-2"
+                      style="border-color: var(--gold) !important;">
+            「每一束花，都是一份用心的禮物。」
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ All Products ============ -->
+  <section id="products" class="mb-5">
+    <div class="text-center mb-4">
+      <span class="eyebrow center justify-content-center">SHOP ALL</span>
+      <h2 class="section-title mt-2 mb-1">探索所有花藝</h2>
+      <p class="section-sub mb-0">找到屬於您的那束花</p>
+    </div>
+
+    <div v-if="loading" class="loader">
+      <div class="spinner-border text-brand" role="status"><span class="visually-hidden">載入中</span></div>
+    </div>
+
+    <template v-else>
+      <div v-if="products.length === 0" class="text-center py-5">
+        <div class="display-5 mb-2">&#127804;</div>
+        <p class="fw-medium text-dark mb-1">目前沒有商品</p>
+        <p class="text-muted-2 small mb-0">請稍後再來看看</p>
+      </div>
+
+      <div v-else class="row g-3 g-md-4">
+        <div class="col-12 col-sm-6 col-lg-4" v-for="product in products" :key="product.id">
+          <article class="product-card h-100">
+            <div class="product-media" @click="goToProduct(product.id)">
+              <span class="ribbon" :class="{ sold: product.stock <= 0 }">
+                {{ product.stock <= 0 ? '已售完' : '新鮮現貨' }}
+              </span>
+              <img :src="product.image_url || 'https://images.unsplash.com/photo-1490750967868-88aa4f44baee?w=600'" :alt="product.name">
+            </div>
+            <div class="product-body">
+              <h3 class="product-name" @click="goToProduct(product.id)">{{ product.name }}</h3>
+              <div class="d-flex align-items-center justify-content-between mt-2 mb-3">
+                <span class="price"><span class="cur">NT$</span>{{ product.price.toLocaleString() }}</span>
+                <span class="rating"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></span>
+              </div>
+              <button
+                @click.stop="addToCart(product)"
+                :disabled="product._adding || product.stock <= 0"
+                class="btn btn-cta w-100 mt-auto">
+                <i class="bi bi-cart-plus me-1"></i>{{ product.stock <= 0 ? '已售完' : '加入購物車' }}
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- Pagination -->
+      <div v-if="pagination.totalPages > 1" class="pager mt-5">
+        <button
+          v-for="p in pagination.totalPages"
+          :key="p"
+          @click="loadProducts(p)"
+          class="page-num"
+          :class="{ active: p === pagination.page }">
+          {{ p }}
+        </button>
+      </div>
+    </template>
+  </section>
+
+  <!-- ============ Testimonials ============ -->
+  <section class="mb-5">
+    <div class="text-center mb-4">
+      <span class="eyebrow center justify-content-center">REVIEWS</span>
+      <h2 class="section-title mt-2 mb-0">顧客花束好評分享</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="surface shadow-soft p-4 h-100">
+          <div class="rating mb-2"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+          <p class="mb-3" style="line-height:1.8;">「花束非常漂亮，包裝精緻，送給媽媽她超開心的！配送也很準時。」</p>
+          <p class="small text-muted-2 mb-0"><i class="bi bi-person-circle me-1"></i>小美</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="surface shadow-soft p-4 h-100">
+          <div class="rating mb-2"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+          <p class="mb-3" style="line-height:1.8;">「第二次購買了，品質一如既往的好。花材新鮮，整體搭配很有美感。」</p>
+          <p class="small text-muted-2 mb-0"><i class="bi bi-person-circle me-1"></i>阿明</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="surface shadow-soft p-4 h-100">
+          <div class="rating mb-2"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+          <p class="mb-3" style="line-height:1.8;">「女朋友收到花束超感動！會再回購的，推薦給大家！」</p>
+          <p class="small text-muted-2 mb-0"><i class="bi bi-person-circle me-1"></i>大衛</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Service Features ============ -->
+  <section class="surface shadow-soft p-4 p-md-4">
+    <div class="row g-4 text-center text-md-start">
+      <div class="col-md-4">
+        <div class="trust-item justify-content-center justify-content-md-start">
+          <span class="ic"><i class="bi bi-truck"></i></span>
+          <div><div class="fw-semibold text-dark">快速配送</div><div class="small text-muted-2">台北市區當日配送</div></div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="trust-item justify-content-center justify-content-md-start">
+          <span class="ic"><i class="bi bi-gift"></i></span>
+          <div><div class="fw-semibold text-dark">精美包裝</div><div class="small text-muted-2">每束花都經過精心包裝</div></div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="trust-item justify-content-center justify-content-md-start">
+          <span class="ic"><i class="bi bi-patch-check"></i></span>
+          <div><div class="fw-semibold text-dark">滿額免運</div><div class="small text-muted-2">消費滿 NT$ 500 免運費</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

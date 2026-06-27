@@ -1,0 +1,91 @@
+<div id="app" v-cloak>
+  <div class="auth-wrap">
+    <div class="auth-card surface shadow-soft p-4 p-md-5">
+      <div class="text-center mb-4">
+        <div class="auth-logo mb-3"><i class="bi bi-flower1"></i></div>
+        <h1 class="h4 mb-1 brand-serif">花漾生活</h1>
+        <p class="small text-muted-2 mb-0">登入以管理您的訂單與購物車</p>
+      </div>
+
+      <!-- Tabs -->
+      <div class="seg mb-4">
+        <button
+          @click="activeTab = 'login'; errors = {}"
+          class="seg-btn"
+          :class="{ active: activeTab === 'login' }">
+          登入
+        </button>
+        <button
+          @click="activeTab = 'register'; errors = {}"
+          class="seg-btn"
+          :class="{ active: activeTab === 'register' }">
+          註冊
+        </button>
+      </div>
+
+      <!-- Login Form -->
+      <form v-if="activeTab === 'login'" @submit.prevent="handleLogin">
+        <div class="mb-3">
+          <label class="form-label">Email</label>
+          <input
+            v-model="loginForm.email"
+            type="email"
+            placeholder="請輸入 Email"
+            class="form-control"
+            :class="{ 'is-invalid': errors.email }">
+          <p v-if="errors.email" class="field-error">{{ errors.email }}</p>
+        </div>
+        <div class="mb-4">
+          <label class="form-label">密碼</label>
+          <input
+            v-model="loginForm.password"
+            type="password"
+            placeholder="請輸入密碼"
+            class="form-control"
+            :class="{ 'is-invalid': errors.password }">
+          <p v-if="errors.password" class="field-error">{{ errors.password }}</p>
+        </div>
+        <button type="submit" :disabled="submitting" class="btn btn-cta btn-lg w-100">
+          {{ submitting ? '登入中...' : '登入' }}
+        </button>
+      </form>
+
+      <!-- Register Form -->
+      <form v-else @submit.prevent="handleRegister">
+        <div class="mb-3">
+          <label class="form-label">姓名</label>
+          <input
+            v-model="registerForm.name"
+            type="text"
+            placeholder="請輸入姓名"
+            class="form-control"
+            :class="{ 'is-invalid': errors.name }">
+          <p v-if="errors.name" class="field-error">{{ errors.name }}</p>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Email</label>
+          <input
+            v-model="registerForm.email"
+            type="email"
+            placeholder="請輸入 Email"
+            class="form-control"
+            :class="{ 'is-invalid': errors.email }">
+          <p v-if="errors.email" class="field-error">{{ errors.email }}</p>
+        </div>
+        <div class="mb-4">
+          <label class="form-label">密碼</label>
+          <input
+            v-model="registerForm.password"
+            type="password"
+            placeholder="至少 6 個字元"
+            class="form-control"
+            :class="{ 'is-invalid': errors.password }">
+          <p v-if="errors.password" class="field-error">{{ errors.password }}</p>
+        </div>
+        <button type="submit" :disabled="submitting" class="btn btn-cta btn-lg w-100">
+          {{ submitting ? '註冊中...' : '註冊' }}
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

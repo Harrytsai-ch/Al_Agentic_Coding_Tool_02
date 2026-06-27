@@ -1,0 +1,124 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link " 花漾生活" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e5]: 
+        - text: 花漾生活
+      - text: 
+      - generic [ref=e6]:
+        - list [ref=e7]:
+          - listitem [ref=e8]:
+            - link "商品列表" [ref=e9] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=e10]:
+            - link "購物車" [ref=e11] [cursor=pointer]:
+              - /url: /cart
+          - listitem [ref=e12]:
+            - link "我的訂單" [ref=e13] [cursor=pointer]:
+              - /url: /orders
+        - generic [ref=e14]:
+          - link "後台管理" [ref=e15] [cursor=pointer]:
+            - /url: /admin/products
+          - generic [ref=e16]:
+            - generic [ref=e17]: 
+            - text: Admin
+          - button "登出" [ref=e18] [cursor=pointer]
+  - main [ref=e19]:
+    - generic [ref=e21]:
+      - generic [ref=e22]:
+        - link "" [ref=e23] [cursor=pointer]:
+          - /url: /orders
+          - generic [ref=e24]: 
+        - heading "訂單詳情" [level=1] [ref=e25]
+      - generic [ref=e26]:
+        - generic [ref=e27]:
+          - generic [ref=e29]:
+            - generic [ref=e30]:
+              - paragraph [ref=e31]:
+                - generic [ref=e32]: 
+                - text: 訂單編號：ORD-20260627-E8800
+              - paragraph [ref=e33]: 建立日期：2026/6/27
+            - generic [ref=e34]: 待付款
+          - generic [ref=e35]:
+            - heading " 收件資訊" [level=2] [ref=e36]:
+              - generic [ref=e37]: 
+              - text: 收件資訊
+            - generic [ref=e38]:
+              - generic [ref=e39]: 收件人：E2E 測試員
+              - generic [ref=e40]: Email：e2e-test@example.com
+              - generic [ref=e41]: 地址：台北市中正區重慶南路一段122號
+          - generic [ref=e42]:
+            - heading " 商品明細" [level=2] [ref=e43]:
+              - generic [ref=e44]: 
+              - text: 商品明細
+            - table [ref=e46]:
+              - rowgroup [ref=e47]:
+                - row "商品名稱 單價 數量 小計" [ref=e48]:
+                  - columnheader "商品名稱" [ref=e49]
+                  - columnheader "單價" [ref=e50]
+                  - columnheader "數量" [ref=e51]
+                  - columnheader "小計" [ref=e52]
+              - rowgroup [ref=e53]:
+                - row "粉色玫瑰花束 NT$ 1,680 1 NT$ 1,680" [ref=e54]:
+                  - cell "粉色玫瑰花束" [ref=e55]
+                  - cell "NT$ 1,680" [ref=e56]
+                  - cell "1" [ref=e57]
+                  - cell "NT$ 1,680" [ref=e58]
+        - generic [ref=e60]:
+          - heading "付款資訊" [level=2] [ref=e61]
+          - generic [ref=e62]:
+            - generic [ref=e63]: 應付總計
+            - generic [ref=e64]: NT$ 1,680
+          - generic [ref=e65]:
+            - button " 前往綠界付款" [ref=e66] [cursor=pointer]:
+              - generic [ref=e67]: 
+              - text: 前往綠界付款
+            - button " 重新查詢付款結果" [ref=e68] [cursor=pointer]:
+              - generic [ref=e69]: 
+              - text: 重新查詢付款結果
+  - contentinfo [ref=e70]:
+    - generic [ref=e71]:
+      - generic [ref=e72]:
+        - generic [ref=e73]:
+          - generic [ref=e74]:
+            - generic [ref=e75]: 
+            - text: 花漾生活
+          - paragraph [ref=e77]: 精選當季鮮花，由專業花藝師手工包裝。每一束花都傳遞著溫暖與祝福，為您的生活增添色彩與芬芳。
+        - generic [ref=e78]:
+          - heading "快速連結" [level=6] [ref=e79]
+          - list [ref=e80]:
+            - listitem [ref=e81]:
+              - link "商品列表" [ref=e82] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e83]:
+              - link "購物車" [ref=e84] [cursor=pointer]:
+                - /url: /cart
+            - listitem [ref=e85]:
+              - link "我的訂單" [ref=e86] [cursor=pointer]:
+                - /url: /orders
+        - generic [ref=e87]:
+          - heading "客戶服務" [level=6] [ref=e88]
+          - list [ref=e89]:
+            - listitem [ref=e90]:
+              - generic [ref=e91]: 
+              - text: 台北市區當日配送
+            - listitem [ref=e92]:
+              - generic [ref=e93]: 
+              - text: 消費滿 NT$ 500 免運
+            - listitem [ref=e94]:
+              - generic [ref=e95]: 
+              - text: 客服時間 09:00–18:00
+      - separator [ref=e96]
+      - generic [ref=e97]:
+        - generic [ref=e98]: © 2026 花漾生活 Flower Life. All rights reserved.
+        - generic [ref=e99]:
+          - link "" [ref=e100] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e101]: 
+          - link "" [ref=e102] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e103]: 
+          - link "" [ref=e104] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e105]: 

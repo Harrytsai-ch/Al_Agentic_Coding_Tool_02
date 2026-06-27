@@ -1,0 +1,357 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link " 花漾生活" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e5]: 
+        - text: 花漾生活
+      - text: 
+      - generic [ref=e6]:
+        - list [ref=e7]:
+          - listitem [ref=e8]:
+            - link "商品列表" [ref=e9] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=e10]:
+            - link "購物車 1" [ref=e343] [cursor=pointer]:
+              - /url: /cart
+              - text: 購物車
+              - generic [ref=e344]: "1"
+          - listitem [ref=e12]:
+            - link "我的訂單" [ref=e13] [cursor=pointer]:
+              - /url: /orders
+        - generic [ref=e14]:
+          - link "後台管理" [ref=e15] [cursor=pointer]:
+            - /url: /admin/products
+          - generic [ref=e16]:
+            - generic [ref=e17]: 
+            - text: Admin
+          - button "登出" [ref=e18] [cursor=pointer]
+  - main [ref=e19]:
+    - generic [ref=e21]:
+      - generic [ref=e22]:
+        - img
+        - generic [ref=e23]:
+          - generic [ref=e24]:
+            - generic [ref=e25]: FRESH · HANDCRAFTED · 2020
+            - heading "讓花， 裝點生活的每一刻" [level=1] [ref=e26]:
+              - text: 讓花，
+              - text: 裝點生活的每一刻
+            - paragraph [ref=e27]: 精選當季鮮花，由專業花藝師手工包裝。每一束花都傳遞著溫暖與祝福，為您的生活增添色彩與芬芳。
+            - generic [ref=e28]:
+              - link " 立即選購" [ref=e29] [cursor=pointer]:
+                - /url: "#products"
+                - generic [ref=e30]: 
+                - text: 立即選購
+              - link "品牌故事" [ref=e31] [cursor=pointer]:
+                - /url: "#story"
+            - generic [ref=e32]:
+              - generic [ref=e33]:
+                - generic [ref=e34]: 12,000+
+                - text: 滿意顧客
+              - generic [ref=e35]:
+                - generic [ref=e36]: 當日
+                - text: 台北配送
+              - generic [ref=e37]:
+                - generic [ref=e38]: 4.9★
+                - text: 顧客評分
+          - generic [ref=e40]:
+            - img "精緻手工花束" [ref=e42]
+            - generic [ref=e43]:
+              - generic [ref=e45]: 
+              - generic [ref=e46]:
+                - generic [ref=e47]: 職人手作
+                - text: 每束嚴選把關
+            - generic [ref=e48]:
+              - generic [ref=e50]: 
+              - generic [ref=e51]: 滿 NT$500 免運
+      - generic [ref=e52]:
+        - generic [ref=e53]:
+          - generic [ref=e54]: BEST SELLERS
+          - heading "精選推薦" [level=2] [ref=e55]
+          - paragraph [ref=e56]: 本季最受歡迎的花卉精選
+        - generic [ref=e57]:
+          - article [ref=e59] [cursor=pointer]:
+            - generic [ref=e60]:
+              - generic [ref=e61]:
+                - generic [ref=e62]: 
+                - text: 熱銷
+              - img "粉色玫瑰花束" [ref=e63]
+            - generic [ref=e64]:
+              - heading "粉色玫瑰花束" [level=3] [ref=e65]
+              - paragraph [ref=e66]: NT$1,680
+          - article [ref=e68] [cursor=pointer]:
+            - generic [ref=e69]:
+              - generic [ref=e70]:
+                - generic [ref=e71]: 
+                - text: 熱銷
+              - img "白色百合花禮盒" [ref=e72]
+            - generic [ref=e73]:
+              - heading "白色百合花禮盒" [level=3] [ref=e74]
+              - paragraph [ref=e75]: NT$1,280
+          - article [ref=e77] [cursor=pointer]:
+            - generic [ref=e78]:
+              - generic [ref=e79]:
+                - generic [ref=e80]: 
+                - text: 熱銷
+              - img "繽紛向日葵花束" [ref=e81]
+            - generic [ref=e82]:
+              - heading "繽紛向日葵花束" [level=3] [ref=e83]
+              - paragraph [ref=e84]: NT$980
+          - article [ref=e86] [cursor=pointer]:
+            - generic [ref=e87]:
+              - generic [ref=e88]:
+                - generic [ref=e89]: 
+                - text: 熱銷
+              - img "紫色鬱金香盆栽" [ref=e90]
+            - generic [ref=e91]:
+              - heading "紫色鬱金香盆栽" [level=3] [ref=e92]
+              - paragraph [ref=e93]: NT$750
+      - generic [ref=e95]:
+        - img "花藝師工作中" [ref=e97]
+        - generic [ref=e99]:
+          - generic [ref=e100]: OUR STORY
+          - heading "專心，做好一束花的感動" [level=2] [ref=e101]
+          - paragraph [ref=e102]: 花漾生活成立於 2020 年，我們相信每一朵花都有自己的故事。透過專業花藝師的巧手，將大自然的美好帶進您的日常生活中。
+          - blockquote [ref=e103]: 「每一束花，都是一份用心的禮物。」
+      - generic [ref=e104]:
+        - generic [ref=e105]:
+          - generic [ref=e106]: SHOP ALL
+          - heading "探索所有花藝" [level=2] [ref=e107]
+          - paragraph [ref=e108]: 找到屬於您的那束花
+        - generic [ref=e109]:
+          - article [ref=e111] [cursor=pointer]:
+            - generic [ref=e112]:
+              - generic [ref=e113]: 新鮮現貨
+              - img "粉色玫瑰花束" [ref=e114]
+            - generic [ref=e115]:
+              - heading "粉色玫瑰花束" [level=3] [ref=e116]
+              - generic [ref=e117]:
+                - generic [ref=e118]: NT$1,680
+                - generic [ref=e119]:
+                  - generic [ref=e120]: 
+                  - generic [ref=e121]: 
+                  - generic [ref=e122]: 
+                  - generic [ref=e123]: 
+                  - generic [ref=e124]: 
+              - button " 加入購物車" [ref=e125]:
+                - generic [ref=e126]: 
+                - text: 加入購物車
+          - article [ref=e128] [cursor=pointer]:
+            - generic [ref=e129]:
+              - generic [ref=e130]: 新鮮現貨
+              - img "白色百合花禮盒" [ref=e131]
+            - generic [ref=e132]:
+              - heading "白色百合花禮盒" [level=3] [ref=e133]
+              - generic [ref=e134]:
+                - generic [ref=e135]: NT$1,280
+                - generic [ref=e136]:
+                  - generic [ref=e137]: 
+                  - generic [ref=e138]: 
+                  - generic [ref=e139]: 
+                  - generic [ref=e140]: 
+                  - generic [ref=e141]: 
+              - button " 加入購物車" [ref=e142]:
+                - generic [ref=e143]: 
+                - text: 加入購物車
+          - article [ref=e145] [cursor=pointer]:
+            - generic [ref=e146]:
+              - generic [ref=e147]: 新鮮現貨
+              - img "繽紛向日葵花束" [ref=e148]
+            - generic [ref=e149]:
+              - heading "繽紛向日葵花束" [level=3] [ref=e150]
+              - generic [ref=e151]:
+                - generic [ref=e152]: NT$980
+                - generic [ref=e153]:
+                  - generic [ref=e154]: 
+                  - generic [ref=e155]: 
+                  - generic [ref=e156]: 
+                  - generic [ref=e157]: 
+                  - generic [ref=e158]: 
+              - button " 加入購物車" [ref=e159]:
+                - generic [ref=e160]: 
+                - text: 加入購物車
+          - article [ref=e162] [cursor=pointer]:
+            - generic [ref=e163]:
+              - generic [ref=e164]: 新鮮現貨
+              - img "紫色鬱金香盆栽" [ref=e165]
+            - generic [ref=e166]:
+              - heading "紫色鬱金香盆栽" [level=3] [ref=e167]
+              - generic [ref=e168]:
+                - generic [ref=e169]: NT$750
+                - generic [ref=e170]:
+                  - generic [ref=e171]: 
+                  - generic [ref=e172]: 
+                  - generic [ref=e173]: 
+                  - generic [ref=e174]: 
+                  - generic [ref=e175]: 
+              - button " 加入購物車" [ref=e176]:
+                - generic [ref=e177]: 
+                - text: 加入購物車
+          - article [ref=e179] [cursor=pointer]:
+            - generic [ref=e180]:
+              - generic [ref=e181]: 新鮮現貨
+              - img "乾燥花藝術花圈" [ref=e182]
+            - generic [ref=e183]:
+              - heading "乾燥花藝術花圈" [level=3] [ref=e184]
+              - generic [ref=e185]:
+                - generic [ref=e186]: NT$1,450
+                - generic [ref=e187]:
+                  - generic [ref=e188]: 
+                  - generic [ref=e189]: 
+                  - generic [ref=e190]: 
+                  - generic [ref=e191]: 
+                  - generic [ref=e192]: 
+              - button " 加入購物車" [ref=e193]:
+                - generic [ref=e194]: 
+                - text: 加入購物車
+          - article [ref=e196] [cursor=pointer]:
+            - generic [ref=e197]:
+              - generic [ref=e198]: 新鮮現貨
+              - img "迷你多肉組合盆" [ref=e199]
+            - generic [ref=e200]:
+              - heading "迷你多肉組合盆" [level=3] [ref=e201]
+              - generic [ref=e202]:
+                - generic [ref=e203]: NT$580
+                - generic [ref=e204]:
+                  - generic [ref=e205]: 
+                  - generic [ref=e206]: 
+                  - generic [ref=e207]: 
+                  - generic [ref=e208]: 
+                  - generic [ref=e209]: 
+              - button " 加入購物車" [ref=e210]:
+                - generic [ref=e211]: 
+                - text: 加入購物車
+          - article [ref=e213] [cursor=pointer]:
+            - generic [ref=e214]:
+              - generic [ref=e215]: 新鮮現貨
+              - img "經典紅玫瑰花束" [ref=e216]
+            - generic [ref=e217]:
+              - heading "經典紅玫瑰花束" [level=3] [ref=e218]
+              - generic [ref=e219]:
+                - generic [ref=e220]: NT$3,980
+                - generic [ref=e221]:
+                  - generic [ref=e222]: 
+                  - generic [ref=e223]: 
+                  - generic [ref=e224]: 
+                  - generic [ref=e225]: 
+                  - generic [ref=e226]: 
+              - button " 加入購物車" [ref=e227]:
+                - generic [ref=e228]: 
+                - text: 加入購物車
+          - article [ref=e230] [cursor=pointer]:
+            - generic [ref=e231]:
+              - generic [ref=e232]: 新鮮現貨
+              - img "季節鮮花訂閱（月配）" [ref=e233]
+            - generic [ref=e234]:
+              - heading "季節鮮花訂閱（月配）" [level=3] [ref=e235]
+              - generic [ref=e236]:
+                - generic [ref=e237]: NT$890
+                - generic [ref=e238]:
+                  - generic [ref=e239]: 
+                  - generic [ref=e240]: 
+                  - generic [ref=e241]: 
+                  - generic [ref=e242]: 
+                  - generic [ref=e243]: 
+              - button " 加入購物車" [ref=e244]:
+                - generic [ref=e245]: 
+                - text: 加入購物車
+      - generic [ref=e246]:
+        - generic [ref=e247]:
+          - generic [ref=e248]: REVIEWS
+          - heading "顧客花束好評分享" [level=2] [ref=e249]
+        - generic [ref=e250]:
+          - generic [ref=e252]:
+            - generic [ref=e253]:
+              - generic [ref=e254]: 
+              - generic [ref=e255]: 
+              - generic [ref=e256]: 
+              - generic [ref=e257]: 
+              - generic [ref=e258]: 
+            - paragraph [ref=e259]: 「花束非常漂亮，包裝精緻，送給媽媽她超開心的！配送也很準時。」
+            - paragraph [ref=e260]:
+              - generic [ref=e261]: 
+              - text: 小美
+          - generic [ref=e263]:
+            - generic [ref=e264]:
+              - generic [ref=e265]: 
+              - generic [ref=e266]: 
+              - generic [ref=e267]: 
+              - generic [ref=e268]: 
+              - generic [ref=e269]: 
+            - paragraph [ref=e270]: 「第二次購買了，品質一如既往的好。花材新鮮，整體搭配很有美感。」
+            - paragraph [ref=e271]:
+              - generic [ref=e272]: 
+              - text: 阿明
+          - generic [ref=e274]:
+            - generic [ref=e275]:
+              - generic [ref=e276]: 
+              - generic [ref=e277]: 
+              - generic [ref=e278]: 
+              - generic [ref=e279]: 
+              - generic [ref=e280]: 
+            - paragraph [ref=e281]: 「女朋友收到花束超感動！會再回購的，推薦給大家！」
+            - paragraph [ref=e282]:
+              - generic [ref=e283]: 
+              - text: 大衛
+      - generic [ref=e285]:
+        - generic [ref=e287]:
+          - generic [ref=e289]: 
+          - generic [ref=e290]:
+            - generic [ref=e291]: 快速配送
+            - generic [ref=e292]: 台北市區當日配送
+        - generic [ref=e294]:
+          - generic [ref=e296]: 
+          - generic [ref=e297]:
+            - generic [ref=e298]: 精美包裝
+            - generic [ref=e299]: 每束花都經過精心包裝
+        - generic [ref=e301]:
+          - generic [ref=e303]: 
+          - generic [ref=e304]:
+            - generic [ref=e305]: 滿額免運
+            - generic [ref=e306]: 消費滿 NT$ 500 免運費
+  - contentinfo [ref=e307]:
+    - generic [ref=e308]:
+      - generic [ref=e309]:
+        - generic [ref=e310]:
+          - generic [ref=e311]:
+            - generic [ref=e312]: 
+            - text: 花漾生活
+          - paragraph [ref=e314]: 精選當季鮮花，由專業花藝師手工包裝。每一束花都傳遞著溫暖與祝福，為您的生活增添色彩與芬芳。
+        - generic [ref=e315]:
+          - heading "快速連結" [level=6] [ref=e316]
+          - list [ref=e317]:
+            - listitem [ref=e318]:
+              - link "商品列表" [ref=e319] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e320]:
+              - link "購物車" [ref=e321] [cursor=pointer]:
+                - /url: /cart
+            - listitem [ref=e322]:
+              - link "我的訂單" [ref=e323] [cursor=pointer]:
+                - /url: /orders
+        - generic [ref=e324]:
+          - heading "客戶服務" [level=6] [ref=e325]
+          - list [ref=e326]:
+            - listitem [ref=e327]:
+              - generic [ref=e328]: 
+              - text: 台北市區當日配送
+            - listitem [ref=e329]:
+              - generic [ref=e330]: 
+              - text: 消費滿 NT$ 500 免運
+            - listitem [ref=e331]:
+              - generic [ref=e332]: 
+              - text: 客服時間 09:00–18:00
+      - separator [ref=e333]
+      - generic [ref=e334]:
+        - generic [ref=e335]: © 2026 花漾生活 Flower Life. All rights reserved.
+        - generic [ref=e336]:
+          - link "" [ref=e337] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e338]: 
+          - link "" [ref=e339] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e340]: 
+          - link "" [ref=e341] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e342]: 
+  - generic [ref=e345]: 已加入購物車
